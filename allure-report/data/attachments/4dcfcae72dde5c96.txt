@@ -1,0 +1,6 @@
+Get URL Title : BeaconICnRM
+Get Login Url:http://192.168.32.33:8599/
+Yes button clicked successfully
+Re-enter login is done
+Get BannedCustmore Page Url: http://192.168.32.33:8599/Admin/BannedCustomer
+Get BannedCustmore Page Title BeaconICnRM

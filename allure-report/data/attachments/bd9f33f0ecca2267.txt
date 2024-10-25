@@ -1,0 +1,37 @@
+Get URL Title : BeaconICnRM
+Get Login Url:http://192.168.32.33:8599/
+Popup is not coming page.waitForSelector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('//span[text()="Yes"]') to be visible
+
+    at LoginPage.yesButton (D:\BeaconProject\POM\LoginPage.js:34:20)
+    at D:\BeaconProject\tests\bannedCustomerPage.spec.js:40:19 {
+  [Symbol(step)]: {
+    stepId: 'pw:api@14',
+    location: {
+      file: 'D:\\BeaconProject\\POM\\LoginPage.js',
+      line: 34,
+      column: 20,
+      function: 'LoginPage.yesButton'
+    },
+    category: 'pw:api',
+    title: 'page.waitForSelector(//span[text()="Yes"])',
+    apiName: 'page.waitForSelector',
+    params: { selector: '//span[text()="Yes"]', state: 'visible' },
+    boxedStack: undefined,
+    steps: [],
+    complete: [Function: complete],
+    endWallTime: 1728886384333,
+    error: {
+      message: 'Error: page.waitForSelector: Target page, context or browser has been closed\n' +
+        'Call log:\n' +
+        `  \x1B[2m- waiting for locator('//span[text()="Yes"]') to be visible\x1B[22m\n`,
+      stack: 'Error: page.waitForSelector: Target page, context or browser has been closed\n' +
+        'Call log:\n' +
+        `  \x1B[2m- waiting for locator('//span[text()="Yes"]') to be visible\x1B[22m\n` +
+        '\n' +
+        '    at LoginPage.yesButton (D:\\BeaconProject\\POM\\LoginPage.js:34:20)\n' +
+        '    at D:\\BeaconProject\\tests\\bannedCustomerPage.spec.js:40:19'
+    }
+  }
+}

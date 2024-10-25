@@ -1,0 +1,9 @@
+Customer ID Input:undefined
+Customer Name Input:undefined
+Mobile Number Input:undefined
+Address Input:undefined
+Id proof Document Dropdown Input:
+                Select
+            
+ID Proof Document Input:undefined
+ID Proof Number:undefined

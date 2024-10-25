@@ -1,0 +1,2 @@
+Please Enter the character from the ID Proof Number field should allowed is 0-20
+Entered  ID Proof Number:55608536811855608536,idProofNoLength:20

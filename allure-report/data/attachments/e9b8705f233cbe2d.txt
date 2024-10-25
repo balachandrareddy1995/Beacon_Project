@@ -1,0 +1,10 @@
+CustmoreID input box Range should be  0-20
+CustmoreIDvalue:JD20231010,CustmoreIDLength:10
+Please Enter the character from the Custmore Name field should allowed 0-50 
+Entered custmoreName: Rahul Dravid, Entered custmoreName Length: 12
+Mobile Number text box should be allowed 0 to 10
+Entered MobileNumber:8919655106,Mobile Number Length:10
+Address text box should be allowed 0 to 100
+Entered Address:Bangalore,Address Length:9
+Id Proof Number text box should be allowed 0-12
+Entered Id Proof Number:556085368118,IdProofNumber Length:12

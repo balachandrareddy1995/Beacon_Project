@@ -1,0 +1,44 @@
+{
+    "bannedCustomer": 
+    {
+      "customerName" :{
+        
+        "ValidcustomerName":"Rahul Dravid",
+        "specialcharacterCustmoreName":"John@123$&"
+      },
+      "IDProofDocument":{
+        "DocumentAADHAR"     :"AADHAR",
+        "DocumentPAN"        :"PAN",
+        "DocumentVOTERID"    :"VOTER ID",
+        "DocumentPASSPORT"   :"PASSPORT"
+      },
+      "IDProofNumber":
+      {
+      "validIDProofNumberAadhar":"556085368118",
+      "vaidIDProofNumberPan"        :"ABCDE1234F",
+      "specialcharacterIDProofNumber":"AP03A96@123$%"
+      },
+      "mobileNumber":
+      {
+        "validMobileNumber":"8919655106"
+      },
+      "custmoreID":
+      {
+        "custmoreIDInput":"JD20231010"
+      },
+      "address":
+      {
+        "addressInput":"Bangalore"
+      }
+      
+        
+     }
+     
+    
+    
+
+    
+    
+  }
+  
+  

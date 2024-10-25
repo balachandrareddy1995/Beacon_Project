@@ -1,0 +1,2 @@
+HomePage URL:http://192.168.32.33:8599/home
+Navigating into the Home Pagee

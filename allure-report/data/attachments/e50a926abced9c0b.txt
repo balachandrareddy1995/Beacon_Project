@@ -1,0 +1,2 @@
+Please Enter the character from the Custmore Name field should allowed 0-50 
+Entered custmoreName: Rahul Dravid, Entered custmoreName Length: 12

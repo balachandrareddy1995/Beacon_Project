@@ -1,0 +1,6 @@
+Please Enter the character from the Custmore Name field should allowed 0-50 
+Entered custmoreName: Rahul Dravid, Entered custmoreName Length: 12
+Please Enter the character from the ID Proof Number field should allowed is 0-20
+Entered  ID Proof Number:ABCDE1234F,idProofNoLength:10
+No records found warning Message :false
+"No records found" message is hidden.

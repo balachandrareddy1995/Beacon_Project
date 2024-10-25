@@ -1,0 +1,4 @@
+Please Enter the character from the Custmore Name field should allowed 0-50 
+Entered custmoreName: John@123$&, Entered custmoreName Length: 10
+Please Enter the character from the ID Proof Number field should allowed is 0-20
+Entered  ID Proof Number:AP03A96@123$%,idProofNoLength:13

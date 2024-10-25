@@ -1,0 +1,25 @@
+{
+  "name": "beaconproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "allure:commandline:setup": "npm install --save-dev allure-commandline",
+    "allure:playwright:setup": "npm install --save-dev allure-playwright",
+    "allure:test:run": "npx playwright test --reporter=line,allure-playwright",
+    "allure:report": "npx allure serve allure-results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.7.5",
+    "allure-commandline": "^2.30.0",
+    "allure-playwright": "^3.0.4"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0",
+    "xlsx": "^0.18.5"
+  }
+}
