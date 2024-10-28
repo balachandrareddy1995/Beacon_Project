@@ -46,9 +46,9 @@ test.describe('Banned Customer Creation', () => {
       }
   });
 
-  test.afterAll(async () => {
-    await context.close();
-  });
+  // test.afterAll(async () => {
+  //   await context.close();
+  // });
   
 
   test('As a User Login to the Application and Click on the Banned Custmore Link', async () => {
