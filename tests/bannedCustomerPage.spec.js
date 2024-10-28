@@ -46,6 +46,12 @@ test.describe('Banned Customer Creation', () => {
       }
   });
 
+  test.afterAll(async () => {
+    if (context) {
+      await context.close();
+    }
+  });
+
   // test.afterAll(async () => {
   //   await context.close();
   // });
