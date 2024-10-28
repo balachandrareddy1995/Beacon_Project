@@ -79,6 +79,7 @@ class BannedCustomerPage{
   this.closeButtonPopup=`//a[@role="button"]`;
   this.someErrorOccured=`//p[text()="Some error occured."]`;
   this.customerdetailsupdated=`//p[text()="Customer details updated."]`;
+  this.checkBoxStatus='//div[starts-with(@class,"rz-chkbox-box")]';
   
   }
     async verifyBannedCustomerPageElements() {
@@ -467,6 +468,10 @@ async SucessMessageForCustomerdetailsupdated (){
 
   await this.page.waitForSelector(this.customerdetailsupdated,{state:'visible'});
   await expect(this.page.locator(this.customerdetailsupdated)).toBeVisible();
+}
+async uncheckCheckMarkStatus(){
+  await this.page.waitForSelector(this.checkBoxStatus, { state: 'visible' });
+  await this.page.locator(this.checkBoxStatus).click();
 }
 
 }

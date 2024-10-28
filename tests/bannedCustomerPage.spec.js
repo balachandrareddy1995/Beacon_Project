@@ -46,15 +46,15 @@ test.describe('Banned Customer Creation', () => {
       }
   });
 
-  test.afterAll(async () => {
-    if (context) {
-      await context.close();
-    }
-  });
-
   // test.afterAll(async () => {
-  //   await context.close();
+  //   if (context) {
+  //     await context.close();
+  //   }
   // });
+
+  test.afterAll(async () => {
+    await context.close();
+  });
   
 
   test('As a User Login to the Application and Click on the Banned Custmore Link', async () => {
@@ -496,7 +496,7 @@ test('verify the Warning Message,When Enter the Special char from CustomerName a
     await bannedCustomerPage.closeButtonBottom();
     await bannedCustomerPage.verifyBannedCustomerPageUrlAfterCloseButton(url);
   });
-  // yes 17 fun
+  
 test('As a USer to enter the details from Add Banned customer Page,after to click on the save button.should show the "New Customer details added."',async()=>{
     
     await dashBoardPage.navigateToAddNewCustomerPage();
@@ -638,6 +638,17 @@ test('As a USer to enter the details from Add Banned customer Page,after to clic
   });
 test('As a User to search the custmore details from a banned custmore page,validate all the field validations only.',async()=>{
  
+
+
+
+
+
+
+
+
+
+
+
   const testData = await excelReader.readData("TestData/TestDataBeaconProject.xlsx", "BannedCustomerSheet", "Create Add new customer form - Enter Valid Data", "CustomerName");
   const customerName = testData[0];
 
@@ -765,4 +776,94 @@ const testData1 = await excelReader.readData("TestData/TestDataBeaconProject.xls
   await bannedCustomerPage.clickSearchButton();
 
 });
+test('As a User Customer status is updated to unbanned. Should show a confirmation message "Customer details updated." is displayed.',async()=>{
+  await bannedCustomerPage.uncheckCheckMarkStatus();//uncheck For Status
+  await bannedCustomerPage.clickOnSaveButton();
+  await bannedCustomerPage.yesButtonConfirmPopup();
+  await bannedCustomerPage.SucessMessageForCustomerdetailsupdated();
+
+  const testData = await excelReader.readData("TestData/TestDataBeaconProject.xlsx", "BannedCustomerSheet", "Create Add new customer form - Enter Valid Data", "CustomerName");
+  const customerName = testData[0];
+
+
+  if (customerName) {
+      await bannedCustomerPage.enterCustomerName(customerName);
+  } else {
+      console.error('No valid test data found for Customer Name field.');
+  }
+
+  const testData1 = await excelReader.readData("TestData/TestDataBeaconProject.xlsx", "BannedCustomerSheet", "Create Add new customer form - Enter Valid Data", "IDProofDocument");
+
+  if (testData1.length > 0) {
+      for (const IdProofDocument of testData1) {
+          console.log("Id ProofDocument Dropdown values :"+IdProofDocument); // Print each ID proof document
+          await bannedCustomerPage.selectIdProofDocument(IdProofDocument);
+          await page.waitForTimeout(1000);
+      }
+  } else {
+      console.error('No valid test data found for ID Proof Document.');
+  }
+
+  const testData2 = await excelReader.readData("TestData/TestDataBeaconProject.xlsx", "BannedCustomerSheet", "Create Add new customer form - Enter Valid Data", "IDProofNumber");
+  
+  if (testData2.length>0) {
+  for(const IDProofNoField of testData2){
+    console.log("IDProofNo Reading:"+IDProofNoField);
+    await bannedCustomerPage.enterIdProofNo(IDProofNoField);
+  }
+  } else {
+      console.error('No valid test data found for IDProofNo field.');
+  }
+  await page.waitForTimeout(3000);
+  await bannedCustomerPage.clickSearchButton();
+  await page.waitForTimeout(2e3);
+await bannedCustomerPage.assertCheckboxCheckedStatus(false);
+
+});
+
+test('As a User Customer status is updated to banned.Should show a confirmation message "Customer details updated." is displayed.',async()=>{
+  await bannedCustomerPage.uncheckCheckMarkStatus();//check Mark For Status
+  await bannedCustomerPage.clickOnSaveButton();
+  await bannedCustomerPage.yesButtonConfirmPopup();
+  await bannedCustomerPage.SucessMessageForCustomerdetailsupdated();
+
+  const testData = await excelReader.readData("TestData/TestDataBeaconProject.xlsx", "BannedCustomerSheet", "Create Add new customer form - Enter Valid Data", "CustomerName");
+  const customerName = testData[0];
+
+
+  if (customerName) {
+      await bannedCustomerPage.enterCustomerName(customerName);
+  } else {
+      console.error('No valid test data found for Customer Name field.');
+  }
+
+  const testData1 = await excelReader.readData("TestData/TestDataBeaconProject.xlsx", "BannedCustomerSheet", "Create Add new customer form - Enter Valid Data", "IDProofDocument");
+
+  if (testData1.length > 0) {
+      for (const IdProofDocument of testData1) {
+          console.log("Id ProofDocument Dropdown values :"+IdProofDocument); // Print each ID proof document
+          await bannedCustomerPage.selectIdProofDocument(IdProofDocument);
+          await page.waitForTimeout(1000);
+      }
+  } else {
+      console.error('No valid test data found for ID Proof Document.');
+  }
+
+  const testData2 = await excelReader.readData("TestData/TestDataBeaconProject.xlsx", "BannedCustomerSheet", "Create Add new customer form - Enter Valid Data", "IDProofNumber");
+  
+  if (testData2.length>0) {
+  for(const IDProofNoField of testData2){
+    console.log("IDProofNo Reading:"+IDProofNoField);
+    await bannedCustomerPage.enterIdProofNo(IDProofNoField);
+  }
+  } else {
+      console.error('No valid test data found for IDProofNo field.');
+  }
+  await page.waitForTimeout(3000);
+  await bannedCustomerPage.clickSearchButton();
+  await page.waitForTimeout(2e3);
+  await bannedCustomerPage.assertCheckboxCheckedStatus(true);
+
+});
+
 });
