@@ -18,6 +18,8 @@ class DasBoardPage{
             VOTER_ID: '//li[@aria-label=">VOTER ID"]',
             PASSPORT: '//li[@aria-label=">PASSPORT"]'
           };
+          //Role-Management-locators
+          this.roleManagementOption=`//a[@title="Role Management"]`;
     }
     async navigateToBannedCustomer() {
         await this.page.waitForSelector(this.securityManagementDropdown,{ state: 'visible' });
@@ -57,5 +59,11 @@ class DasBoardPage{
         expect(await this.page.locator(this.options.VOTER_ID)).toBeVisible();
         await this.page.locator(this.idProofDocumentInput).click();
        }
+       async navigateToRoleManagement(){
+        await this.page.waitForSelector(this.securityManagementDropdown,{state:'visible'});
+        await this.page.click(this.securityManagementDropdown);
+        await this.page.waitForSelector(this.roleManagementOption,{state:'visible'});
+        await this.page.click(this.roleManagementOption);
+    }
 }
 module.exports={DasBoardPage};

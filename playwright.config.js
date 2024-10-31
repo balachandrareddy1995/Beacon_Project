@@ -15,7 +15,7 @@ module.exports = defineConfig({
   actionTimeout:300*1000,
   browserName:'chromium',
   headless:false,
-  screenshot:'only-on-failure',
+  screenshot:'on',
   video:'retain-on-failure',
   trace:'on',
   },
